@@ -1,16 +1,15 @@
 #!/usr/bin/python3
+"""" Square creates an instance """
 
 class Square:
-
     def __init__(self, size=0):
-        self.size = size
-
-    def area(self):
-        """
-        Calculates the area
-        Returns the current square area
-        """
-        return self.__size ** 2
+        if isinstance(size, int) and size >= 0:
+            """__self is private"""
+            self.__size = size
+        elif (not isinstance(size, int)):
+            raise TypeError("size must be an integer")
+        elif size < 0:
+            raise ValueError("size must be >= 0")
 
     @property
     def size(self):
@@ -18,11 +17,12 @@ class Square:
 
     @size.setter
     def size(self, value):
-        try:
-            int(value)
-            if value >= 0:
-                self.__size = value
-            else:
-                raise ValueError('size must be >= 0')
-        except (TypeError, ValueError):
-                raise TypeError("size must be an integer") 
+        if isinstance(value, int) and value >= 0:
+            self.__size = value
+        elif (not isinstance(value, int)):
+            raise TypeError("size must be an integer")
+        elif value < 0:
+            raise ValueError("size must be >= 0")
+
+    def area(self):
+        return (self.__size * self.__size)
