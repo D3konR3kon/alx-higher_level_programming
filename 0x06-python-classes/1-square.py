@@ -11,4 +11,5 @@ class Square:
         """
         __size is private
         """
-        self.__size = size
+        self.__size = size #: size of the square
+
