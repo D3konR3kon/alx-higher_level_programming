@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
+
 function that create a Rectangle from the width and the height variables
+
 """
 
 
@@ -57,3 +59,14 @@ class Rectangle:
         if self.width == 0 or self.height == 0:
             return (0)
         return ((2 * self.height) + (2 * self.width))
+
+    def __str__(self):
+        if self.width == 0 or self.height == 0:
+            return ''
+        figure = ""
+        for i in range(self.height):
+            for j in range(self.width):
+                figure = figure + "#"
+            if (i < self.height - 1):
+                figure = figure + "\n"
+        return (figure)
