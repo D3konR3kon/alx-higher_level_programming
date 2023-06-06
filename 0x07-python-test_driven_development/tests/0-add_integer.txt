@@ -1,0 +1,15 @@
+TESTS FOR 0-add_integers.py
+===========================
+
+This program has only one function called
+``add_integer()``
+
+
+>>> add_integer = __import__('0-add_integer').add_integer
+>>> add_integer(1, 2)
+3
+>>> add_integer(4.09, 4)
+8
+>>> add_integer(5, True)
+
+>>> add_integer(7.8, "Alx School")
